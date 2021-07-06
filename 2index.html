@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type='text' id='sk' value='12345689'>
+    <button id='confirm'>Confirm</button>
+    <script>
+        'use strict';
+
+        //atskirti n-zenklio skaitmenis ir juos patalpinti i masyva
+
+        //nuskaitymas - veiksmas - isvedimas
+        function nuskaitymas() {
+            var sk = parseInt(document.querySelector('#sk').value);
+            return sk;
+        }
+        function veiksmas(sk) {
+            var masyvas = [];
+            while (sk > 0) {
+                masyvas.push(parseInt(sk%10));
+                sk = parseInt(sk / 10);
+            }
+            masyvas = masyvas.reverse();
+
+            return masyvas;
+        }
+        function isvedimas(masyvas) {
+            console.log('gautas masyvas');
+            console.log(masyvas);
+        }
+
+
+        document.querySelector('#confirm').addEventListener('click', function() {
+
+            isvedimas(veiksmas(nuskaitymas()));
+            // var sk = nuskaitymas();
+
+            // veiksmas(sk); // = masyvas
+            // isvedimas(veiksmas(sk));
+
+
+            //nuskaitymas
+            // var sk = parseInt(document.querySelector('#sk').value);
+
+            // //veiksmas
+            // var masyvas = [];
+
+            // while (sk > 0) {
+            //     masyvas.push(parseInt(sk%10));
+            //     sk = parseInt(sk / 10);
+            // }
+            // masyvas = masyvas.reverse();
+
+            //isvedimas
+            // console.log(masyvas);
+        })
+
+    </script>
+</body>
+</html>

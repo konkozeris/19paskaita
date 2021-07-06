@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //funkcijos - kodo blokas, kuris atlieka spec vieksmus, 
+        // gali buti panaudotas kelis kartus
+
+        //void tipo funkcija - kuri negrazina nieko
+        function pirmaFunkcija() {
+            //kodas, ka funkcija atlieka
+            console.log('funkcija')
+        }
+        function antraFunkcija() {
+            console.log('funkcija2');
+        }
+        //funkcija, kuri grazina
+        function treciaFunkcija() {
+            return 'labadiena'; //funkcijai suteikia reiksme 
+        }
+
+
+        //funkcijos iskvietimas 
+        antraFunkcija();
+        pirmaFunkcija();
+
+        var funkcijosRezultatas = treciaFunkcija();
+
+        console.log(funkcijosRezultatas);
+
+
+        //sudedame du skaicius
+
+        function suma(a , b) {
+            return a + b;
+        }
+
+        //kintamieji perduodami f-cijos iskvietimo metu
+
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+        console.log(suma(10,10));
+
+        //console.log pakaitalas
+
+        function isvedimas(reiksme) {
+            console.log('rezultatas yra:' + reiksme);
+        }
+        isvedimas(suma(20,10));
+        isvedimas(suma(20,10));
+        isvedimas(suma(110,10));
+        isvedimas(suma(101,10));
+        isvedimas(suma(10,110));
+        isvedimas(suma(10,110));
+        isvedimas(suma(10,101));
+
+
+        // sukurti n elementu masyva, kuris butu uzpildytas random reiksmemis
+
+        var n = suma(10, 10);
+        var masyvas = [];
+
+        // var testRandom = Math.random(); // atsitiktine reiksme 0-1
+        // var testRandom1 = Math.floor(Math.random() * 100); // nuo 0 iki 100
+
+        // var testRandom2 = Math.floor(Math.random() * 91) + 77; // 77-90 
+
+        // console.log(testRandom2);
+
+        
+
+        function atsitiktinis(intervaloPradzia, intervaloPabaiga) {
+            return Math.floor(Math.random() * (intervaloPabaiga - intervaloPradzia + 1)) + intervaloPradzia;
+        }
+        var test1 = atsitiktinis(0,99);
+        var test2 = atsitiktinis(77,90);
+
+        console.log(test1);
+        console.log(test2);
+
+        for (var i = 0; i < n; i++) {
+            var atsitiktinisSk = atsitiktinis(0-1000000);
+            masyvas.push(atsitiktinisSk);
+        }
+
+        
+
+
+        console.log(masyvas);
+
+        // var a = 5, 
+        // var b = 10;
+        // var suma = a + b;
+
+        // var a1 = 51, 
+        // var b1 = 101;
+        // var suma1 = a1 + b1;
+        // console.log(suma);
+
+
+
+        // for (var i = 0; i < 10; i++) {
+        //     antraFunkcija();
+        //     pirmaFunkcija();
+        // }
+
+
+        //funkciju tipai
+
+
+
+
+
+
+    </script>
+</body>
+</html>
